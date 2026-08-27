@@ -1,0 +1,30 @@
+[
+  {
+    "id": "plant",
+    "name": "Robert Plant",
+    "role": "Sång",
+    "image": "images/members/robert_plant.jpg",
+    "bio": "Känd för sin kraftfulla röst, breda omfång och scenpersonlighet som hårdrockens ultimata frontman."
+  },
+  {
+    "id": "page",
+    "name": "Jimmy Page",
+    "role": "Gitarr",
+    "image": "images/members/jimmy_page.jpg",
+    "bio": "Bandets grundare, låtskrivare och producent. Känd för sina ikoniska riff och gitarrspel med stråke."
+  },
+  {
+    "id": "jones",
+    "name": "John Paul Jones",
+    "role": "Bas",
+    "image": "images/members/john_paul_jones.jpg",
+    "bio": "Multi-instrumentalist och arrangör som lade den musikaliska och harmoniska grunden i bandet."
+  },
+  {
+    "id": "bonham",
+    "name": "John Bonham",
+    "role": "Trummor",
+    "image": "images/members/john_bonham.jpg",
+    "bio": "Ansedd som en av historiens bästa trummisar, känd för sin enorma tyngd, snabbhet och känsla."
+  }
+]

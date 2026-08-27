@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Led Zeppelin - A Tribute</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <h1>LED ZEPPELIN</h1>
+            <p class="subtitle">A Tribute to the Pioneers of Hard Rock</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#members">Medlemmar</a></li>
+                <li><a href="#albums">Diskografi</a></li>
+                <li><a href="#favorites">Favoriter</a></li>
+                <li><a href="#join-section">Bli Medlem</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="members" class="section">
+            <h2>Bandmedlemmar</h2>
+            <div class="grid-container members-grid">
+                </div>
+        </section>
+
+        <section id="albums" class="section">
+            <h2>Diskografi</h2>
+            <div class="grid-container albums-grid">
+                </div>
+        </section>
+
+        <section id="favorites" class="favorite-tracks-section section">
+            <h2>Mina Favoritlåtar</h2>
+            <div id="favorite-tracks-container">
+                </div>
+        </section>
+
+        <section id="join-section" class="form-section section">
+            <h2>Bli Medlem i Fancluben</h2>
+            <p style="margin-bottom: 1.5rem;">Gå med i vår tribute-community för att få uppdateringar och exklusivt material.</p>
+            
+            <form id="signup-form" novalidate>
+                <div class="form-group">
+                    <label for="fullname">För- och efternamn</label>
+                    <input type="text" id="fullname" class="form-control" placeholder="t.ex. Robert Plant">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-postadress</label>
+                    <input type="email" id="email" class="form-control" placeholder="namn@exempel.se">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="favorite-album">Favoritalbum</label>
+                    <select id="favorite-album" class="form-control">
+                        <option value="">-- Välj ett album --</option>
+                        <option value="Led Zeppelin I">Led Zeppelin I (1969)</option>
+                        <option value="Led Zeppelin II">Led Zeppelin II (1969)</option>
+                        <option value="Led Zeppelin III">Led Zeppelin III (1970)</option>
+                        <option value="Led Zeppelin IV">Led Zeppelin IV (1971)</option>
+                        <option value="Houses of the Holy">Houses of the Holy (1973)</option>
+                        <option value="Physical Graffiti">Physical Graffiti (1975)</option>
+                        <option value="Presence">Presence (1976)</option>
+                        <option value="In Through the Out Door">In Through the Out Door (1979)</option>
+                        <option value="Coda">Coda (1982)</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="btn-submit">Gå med nu</button>
+                <div id="form-feedback" class="form-feedback hidden"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Led Zeppelin Tribute Page | Skapad i kursen HTML/CSS/JS</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
