@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Starta laddning av data och konfigurera event listeners
     initApp();
 });
 
 async function initApp() {
     await loadData();
-    await renderAlbumDetails();  // Körs om vi befinner oss på album-details.html
-    await renderMemberDetails(); // Körs om vi befinner oss på member-details.html
+    await renderAlbumDetails();  
+    await renderMemberDetails(); 
     renderFavoriteTracks();
 }
 

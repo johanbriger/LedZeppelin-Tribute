@@ -70,8 +70,7 @@ body {
 .main-nav a.active {
     color: var(--accent-gold);
 }
-
-/* --- CONTAINER & SEKTIONER --- */
+/* --- CONTAINER & SECTIONS --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -148,7 +147,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* --- KLICKBARA LÄNKAR I KORT (.card-link) --- */
+/* --- KLICKBARA LÄNKAR I KORT --- */
 .card-link {
     text-decoration: none;
     color: inherit;
@@ -164,7 +163,7 @@ body {
     text-decoration: none;
 }
 
-/* --- DETALJSIDOR (album-details.html & member-details.html) --- */
+/* --- Album-details & Member-details --- */
 .back-link {
     display: inline-block;
     color: var(--accent-gold);
@@ -214,7 +213,7 @@ body {
     margin-bottom: 0.8rem;
 }
 
-/* --- LÅTLISTA (PÅ DETALJSIDAN) --- */
+/* --- LÅTLISTA --- */
 .track-list {
     list-style: none;
     counter-reset: track-counter;
@@ -277,7 +276,7 @@ body {
     color: var(--bg-primary);
 }
 
-/* --- FAVORITSEKTION (LOCAL STORAGE) --- */
+/* --- FAVORITLÅTAR (LOCAL STORAGE) --- */
 #favorite-tracks-container {
     background-color: var(--bg-secondary);
     padding: 1.5rem;
