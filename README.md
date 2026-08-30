@@ -48,7 +48,6 @@ Följande kod från `css/style.css` visar hur rutnätet för album och medlemmar
 
 ### Förslag på framtida förbättringar
 
-För att utveckla den responsiva anpassningen ytterligare finns det två huvudsakliga förbättringsområden:
 
 * **Pendlingsfri layout med `auto-fit` och `minmax()`:**
 Istället för fasta brytpunkter vid 768px och 1024px kan CSS Grid ställas in helt flytande:
@@ -59,5 +58,3 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
 
 Detta gör att korten automatiskt anpassar antalet kolumner steglöst baserat på tillgängligt utrymme, vilket eliminerar behovet av manuella `@media`-queries för rutnätet.
-* **Responsiv typografi med `clamp()`:**
-Genom att använda CSS-funktionen `clamp()` för rubriker (t.ex. `font-size: clamp(1.8rem, 4vw, 3rem);`) skalar textstorleken mjukt mellan mobil och desktop istället för att ändras i plötsliga steg vid specifika brytpunkter.
