@@ -1,7 +1,7 @@
 
 ## Responsiv design och Mobile First
 
-Hemsidan är utvecklad enligt principen **Mobile First**. Det innebär att grundläggande CSS är utformad för små skärmar (mobiler) utan några `@media`-queries. Därefter byggs upplevelsen stegvis ut med brytpunkter (*breakpoints*) för större skärmar som surfplattor och datorskärmar.
+Hemsidan är utvecklad enligt principen **Mobile First**. Det innebär att grundläggande CSS är utformad för små skärmar utan några `@media`-queries. Därefter byggs upplevelsen stegvis ut med brytpunkter för större skärmar som surfplattor och datorskärmar.
 
 ### Kodexempel (CSS Grid & Media Queries)
 
