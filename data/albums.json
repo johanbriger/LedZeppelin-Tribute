@@ -15,8 +15,8 @@
       "Communication Breakdown",
       "I Can't Quit You Baby",
       "How Many More Times"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "lz2",
@@ -34,8 +34,8 @@
       "Ramble On",
       "Moby Dick",
       "Bring It On Home"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "lz3",
@@ -54,8 +54,8 @@
       "That's the Way",
       "Bron-Y-Aur Stomp",
       "Hats Off to (Roy) Harper"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "lz4",
@@ -72,8 +72,8 @@
       "Four Sticks",
       "Going to California",
       "When the Levee Breaks"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "hoth",
@@ -90,8 +90,8 @@
       "D'yer Mak'er",
       "No Quarter",
       "The Ocean"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "pg",
@@ -115,8 +115,8 @@
       "Boogie with Stu",
       "Black Country Woman",
       "Sick Again"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "pres",
@@ -132,8 +132,8 @@
       "Candy Store Rock",
       "Hots On for Nowhere",
       "Tea for One"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "ittod",
@@ -149,8 +149,8 @@
       "Carouselambra",
       "All My Love",
       "I'm Gonna Crawl"
-    ],
-    "votes": 0
+    ]
+    
   },
   {
     "id": "coda",
@@ -167,7 +167,7 @@
       "Darlene",
       "Bonzo's Montreux",
       "Wearing and Tearing"
-    ],
-    "votes": 0
+    ]
+    
   }
 ]

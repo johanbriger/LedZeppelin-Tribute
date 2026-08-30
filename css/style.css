@@ -1,22 +1,22 @@
 
 :root {
-  --bg-primary: #121212;        /* Mörk grafitgrå bakgrund */
-  --bg-secondary: #1E1E24;      /* Kort, kortpaneler, nav */
-  --text-main: #E0E0E0;         /* Lättläst ljusgrå text */
-  --accent-gold: #D4AF37;       /* Primär accent (rubriker, knappar, logotyp) */
-  --accent-hover: #F0C441;      /* Hover-tillstånd för guld */
-  --accent-crimson: #A31D1D;    /* Sekundär accent (länkar, viktiga detaljer) */
-  --border-color: #333336;      /* Bårder och avgränsare */
+  --bg-primary: #121212;        
+  --bg-secondary: #1E1E24;      
+  --text-main: #E0E0E0;        
+  --accent-gold: #D4AF37;       
+  --accent-hover: #F0C441;      
+  --accent-crimson: #A31D1D;    
+  --border-color: #333336;      
 }
 
-/* --- NORMALIZE & BASSTILAR --- */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Global regel för responsiva bilder */
+
 img {
     max-width: 100%;
     height: auto;
@@ -82,7 +82,6 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Gemensam stil för ALLA sektionsrubriker (h2) */
 .section h2 {
     color: var(--accent-gold);
     border-bottom: 1px solid var(--border-color);
@@ -98,7 +97,7 @@ body {
     grid-template-columns: 1fr;
 }
 
-/* --- KORT (Både medlemmar & album) --- */
+/* --- KORT --- */
 .card {
     background-color: var(--bg-secondary);
     border-radius: 8px;
@@ -110,7 +109,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Hovringseffekt för hela kortet */
+
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
@@ -383,7 +382,7 @@ body {
     display: none !important;
 }
 
-/* --- MEDIA QUERIES (RESPONSIVITET MOBIL / TABLET / DESKTOP) --- */
+/* --- MEDIA QUERIES --- */
 
 /* Tablet (Minst 600px) */
 @media (min-width: 600px) {

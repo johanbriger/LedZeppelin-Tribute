@@ -8,10 +8,8 @@ async function initApp() {
     await renderAlbumDetails();  // Körs om vi befinner oss på album-details.html
     await renderMemberDetails(); // Körs om vi befinner oss på member-details.html
     renderFavoriteTracks();
-    
 }
 
-// 1. HÄMTA DATA MED FETCH (JSON)
 async function loadData() {
     try {
         const [albumsRes, membersRes] = await Promise.all([
@@ -28,7 +26,6 @@ async function loadData() {
 
         renderMembers(members);
         renderAlbums(albums);
-        populateAlbumSelect(albums);
 
     } catch (error) {
         console.error('Ett fel uppstod:', error);
@@ -39,12 +36,10 @@ async function loadData() {
     }
 }
 
-// 2. RENDERINGSFUNKTIONER (DOM-manipulering utan getElementById)
 function renderMembers(members) {
     const container = document.querySelector('.members-grid');
     if (!container) return;
 
-    // Gör hela medlemskortet klickbart med länk till member-details.html?id=...
     container.innerHTML = members.map(m => `
         <article class="card">
             <a href="member-details.html?id=${m.id}" class="card-link">
@@ -63,7 +58,6 @@ function renderAlbums(albums) {
     const container = document.querySelector('.albums-grid');
     if (!container) return;
 
-    // Gör hela kortet klickbart med länk till album-details.html?id=...
     container.innerHTML = albums.map(a => `
         <article class="card">
             <a href="album-details.html?id=${a.id}" class="card-link">
@@ -135,7 +129,6 @@ async function renderAlbumDetails() {
             </article>
         `;
 
-        // Koppla klick-händelser till alla Spara-knappar
         container.querySelectorAll('.fav-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const track = e.target.dataset.track;
@@ -198,132 +191,29 @@ async function renderMemberDetails() {
     }
 }
 
-function populateAlbumSelect(albums) {
-    const select = document.querySelector('#album-select');
-    if (!select) return;
-
-    albums.forEach(album => {
-        const option = document.createElement('option');
-        option.value = album.title;
-        option.textContent = `${album.title} (${album.year})`;
-        select.appendChild(option);
-    });
-}
-
-// 3. FORMULÄRVALIDERINGS- OCH RÖSTNINGSLOGIK
-function setupFormValidation() {
-    const form = document.querySelector('.vote-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        let isValid = true;
-        const usernameInput = document.querySelector('#username');
-        const albumSelect = document.querySelector('#album-select');
-        const commentInput = document.querySelector('#comment');
-
-        // Validera Namn (Minst 3 tecken)
-        if (usernameInput.value.trim().length < 3) {
-            showError(usernameInput, 'Namnet måste vara minst 3 tecken långt.');
-            isValid = false;
-        } else {
-            clearError(usernameInput);
-        }
-
-        // Validera Albumval
-        if (albumSelect.value === '') {
-            showError(albumSelect, 'Du måste välja ett album.');
-            isValid = false;
-        } else {
-            clearError(albumSelect);
-        }
-
-        // Validera Motivering (Minst 10 tecken)
-        if (commentInput.value.trim().length < 10) {
-            showError(commentInput, 'Motiveringen måste vara minst 10 tecken lång.');
-            isValid = false;
-        } else {
-            clearError(commentInput);
-        }
-
-        // Om formuläret är giltigt
-        if (isValid) {
-            const selectedAlbum = albumSelect.value;
-            saveFavoriteToLocalStorage(selectedAlbum);
-            
-            const feedback = document.querySelector('.form-feedback');
-            feedback.textContent = `Tack för din röst, ${usernameInput.value}! Du röstade på "${selectedAlbum}".`;
-            feedback.classList.remove('hidden');
-
-            form.reset();
-        }
-    });
-}
-
-function showError(inputElement, message) {
-    const formGroup = inputElement.closest('.form-group');
-    const errorSpan = formGroup.querySelector('.error-message');
-    if (errorSpan) {
-        errorSpan.textContent = message;
-    }
-}
-
-function clearError(inputElement) {
-    const formGroup = inputElement.closest('.form-group');
-    const errorSpan = formGroup.querySelector('.error-message');
-    if (errorSpan) {
-        errorSpan.textContent = '';
-    }
-}
-
-// 4. LOCAL STORAGE (VG-KRAV)
-function saveFavoriteToLocalStorage(albumTitle) {
-    localStorage.setItem('favoriteZeppelinAlbum', albumTitle);
-    checkLocalStorage(); // Uppdatera vinnarbannern direkt
-}
-
-function checkLocalStorage() {
-    const favorite = localStorage.getItem('favoriteZeppelinAlbum');
-    const banner = document.querySelector('.favorite-banner');
-
-    if (favorite && banner) {
-        banner.innerHTML = `🎸 <strong>Ditt sparade favorit-album:</strong> ${favorite}`;
-        banner.classList.remove('hidden');
-    }
-}
-
-// Hämta favoritlåtar från Local Storage (returnerar en array)
 function getFavoriteTracks() {
     const saved = localStorage.getItem('zeppelinfavTracks');
     return saved ? JSON.parse(saved) : [];
 }
 
-// Lägg till eller ta bort en låt från Local Storage
 function toggleFavoriteTrack(track, albumTitle, buttonElement) {
     let favorites = getFavoriteTracks();
     const index = favorites.findIndex(f => f.track === track && f.album === albumTitle);
 
     if (index > -1) {
-        // Om låten redan finns -> ta bort den
         favorites.splice(index, 1);
         buttonElement.textContent = '＋ Spara';
         buttonElement.classList.remove('saved');
     } else {
-        // Om låten inte finns -> lägg till den
         favorites.push({ track: track, album: albumTitle });
         buttonElement.textContent = '✓ Sparad';
         buttonElement.classList.add('saved');
     }
 
-    // Spara den uppdaterade arrayen till Local Storage
     localStorage.setItem('zeppelinfavTracks', JSON.stringify(favorites));
-
-    // Uppdatera visningen om vi befinner oss på en sida som visar favoritlistan
     renderFavoriteTracks();
 }
 
-// Rendera favoritlistan på t.ex. startsidan
 function renderFavoriteTracks() {
     const container = document.querySelector('#favorite-tracks-container');
     if (!container) return;
@@ -346,7 +236,6 @@ function renderFavoriteTracks() {
         </ul>
     `;
 
-    // Event listener för ta bort-knapparna i listan
     container.querySelectorAll('.remove-fav-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const index = e.target.dataset.index;

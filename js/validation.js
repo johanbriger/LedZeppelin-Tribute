@@ -16,7 +16,7 @@ function initSignupValidation() {
         const albumSelect = document.querySelector('#favorite-album');
         const feedback = document.querySelector('#form-feedback');
 
-        // 1. Validera Namn (Minst 3 tecken)
+        // 1. Validera Namn
         if (fullnameInput.value.trim().length < 3) {
             showInputError(fullnameInput, 'Ange ditt namn (minst 3 tecken).');
             isValid = false;
@@ -24,7 +24,7 @@ function initSignupValidation() {
             clearInputError(fullnameInput);
         }
 
-        // 2. Validera E-post (Enkel regex för e-postformat)
+        // Validera E-post
         const emailValue = emailInput.value.trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
@@ -35,7 +35,7 @@ function initSignupValidation() {
             clearInputError(emailInput);
         }
 
-        // 3. Validera Val av Favoritalbum
+        // Validera Val av Favoritalbum
         if (albumSelect.value === '') {
             showInputError(albumSelect, 'Vänligen välj ditt favoritalbum.');
             isValid = false;
