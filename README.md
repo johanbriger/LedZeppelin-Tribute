@@ -1,6 +1,3 @@
-Det uppstod en krock när Markdown-kodblock laddades i flera nivåer. Här är hela avsnittet formatterat helt utan omslutande kodblock – nu kan du markera och kopiera texten nedan direkt:
-
----
 
 ## Responsiv design och Mobile First
 
@@ -8,7 +5,7 @@ Hemsidan är utvecklad enligt principen **Mobile First**. Det innebär att grund
 
 ### Kodexempel (CSS Grid & Media Queries)
 
-Följande kodutdrag från `css/style.css` visar hur rutnätet för album och medlemmar anpassar sig dynamiskt efter användarens skärmbredd:
+Följande kod från `css/style.css` visar hur rutnätet för album och medlemmar anpassar sig dynamiskt efter användarens skärmbredd:
 
 ```css
 /* 1. MOBILVY (Base Styles / Standard): 
